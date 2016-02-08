@@ -11,22 +11,22 @@ body {
 }
 
 #peopleContainer {
-    float: left;
+    align-content: center;
+    /*float: left;*/
     width: 999px;
     margin: 20px auto;
     overflow: hidden;
 }
 
 .previous {
-    align-self: center;
     margin: auto;
-    float: left;
+    /*float: right;*/
     display: inline;
 }
 
 .next {
     margin: 10px auto;
-    float: right;
+    /*float: left;*/
     display: inline;
 }
 
@@ -42,8 +42,22 @@ li {
     cursor: pointer;
 }
 
-li.active {
-    background-color: transparent;
+.active {
+    height: 12px;
+    width: 12px;
+    background-color: #2aabd2;
+}
+
+li:active {
+    height: 12px;
+    width: 12px;
+    background-color: #2aabd2;
+}
+
+li:hover {
+    height: 12px;
+    width: 12px;
+    background-color: #00b3ee;
 }
 
 .show {
