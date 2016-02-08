@@ -19,15 +19,23 @@ body {
 }
 
 .previous {
+    /*align-content: center;*/
     margin: auto;
     /*float: right;*/
     display: inline;
 }
 
 .next {
-    margin: 10px auto;
+    /*align-content: center;*/
+    margin: auto;
     /*float: left;*/
     display: inline;
+}
+
+ul {
+    margin-right: 30px;
+    display: inline;
+    align-content: center;
 }
 
 li {
