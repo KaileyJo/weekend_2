@@ -3,11 +3,14 @@ var spin = window.setInterval(carouselSpin, 10000);
 $(document).ready(function(){
     getData();
 
-
-
     $('#next').on('click', function(){
         nextSlide();
     });
+
+    //$('li').on('click', function() {
+    //    $('li').removeClass('active');
+    //    $(this).addClass('active');
+    //});
 
     $('#previous').on('click', function(){
         clearSetInterval();
@@ -19,7 +22,7 @@ $(document).ready(function(){
             $('.show').prev().addClass('show');
             $('.show').last().removeClass('show');
         }
-
+        //switchLI();
     });
 
     //$('.show').
@@ -58,7 +61,7 @@ function getData(){
 
 function carouselSpin() {
     nextSlide();
-};
+}
 
 function nextSlide() {
     clearSetInterval();
@@ -70,7 +73,7 @@ function nextSlide() {
         $('.show').next().addClass('show');
         $('.show').first().removeClass('show');
     }
-
+    //switchLI();
 
     //var $visiblePerson = $('.show').data('index');
     //var $activeLi = $('li').data('index');
@@ -80,9 +83,15 @@ function nextSlide() {
     //    $('li').removeClass('active');
     //}
 
-};
+}
 
 function clearSetInterval() {
     clearInterval(spin);
     spin = window.setInterval(carouselSpin, 10000);
 }
+
+//function switchLI() {
+//    $el = $('.show').data(index);
+//    $li = $('li').data(index, $el).addClass('active');
+//    clearSetInterval();
+//}
