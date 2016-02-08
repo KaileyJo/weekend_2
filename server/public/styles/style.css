@@ -42,6 +42,10 @@ li {
     cursor: pointer;
 }
 
+img {
+    height: 300px;
+}
+
 .active {
     height: 12px;
     width: 12px;
