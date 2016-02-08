@@ -1,13 +1,16 @@
+var spin = window.setInterval(carouselSpin, 10000);
+
 $(document).ready(function(){
     getData();
 
-    var spin = window.setInterval(carouselSpin, 10000);
+
 
     $('#next').on('click', function(){
         nextSlide();
     });
 
     $('#previous').on('click', function(){
+        clearSetInterval();
         var firstPerson = $('.person').first();
         if (firstPerson.hasClass('show')) {
             $('.person').last().addClass('show');
@@ -26,7 +29,6 @@ $(document).ready(function(){
         console.log(dataIndex);
         //$(this).addClass('active');
     });
-
 });
 
 function getData(){
@@ -59,6 +61,7 @@ function carouselSpin() {
 };
 
 function nextSlide() {
+    clearSetInterval();
     var lastPerson = $('.person').last();
     if (lastPerson.hasClass('show')) {
         $('.person').first().addClass('show');
@@ -67,6 +70,8 @@ function nextSlide() {
         $('.show').next().addClass('show');
         $('.show').first().removeClass('show');
     }
+
+
     //var $visiblePerson = $('.show').data('index');
     //var $activeLi = $('li').data('index');
     //if ($visiblePerson == $activeLi) {
@@ -76,3 +81,8 @@ function nextSlide() {
     //}
 
 };
+
+function clearSetInterval() {
+    clearInterval(spin);
+    spin = window.setInterval(carouselSpin, 10000);
+}
